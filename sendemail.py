@@ -8,6 +8,14 @@ import requests
 load_dotenv()
 
 
+# Set the subject and body of the email
+
+# Before you send edit this field
+subject = 'Subject of your choosing'
+body = """
+What ever you write here
+"""
+
 # Function to fetch email recipients from Google Sheet
 def fetch_email_recipients():
     url = os.getenv('GOOGLE_SHEET_URL')  
@@ -28,12 +36,6 @@ email_password = os.getenv('MY_PASSWORD')
 
 # Fetch email recipients from Google Sheet
 email_receiver = fetch_email_recipients()
-
-# Set the subject and body of the email
-subject = 'Check out my new video!'
-body = """
-What ever you write here
-"""
 
 # Add SSL (layer of security)
 context = ssl.create_default_context()
